@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task-5</title>
+  <script defer src="./script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+  <!-- Login Form -->
+  <div id="login-page" class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md bg-white p-6 rounded shadow">
+        <img src="./logIn.webp" alt="">
+      <h2 class="text-center text-xl font-bold mb-4">Login</h2>
+      <form id="login-form" class="space-y-4">
+        <input type="email" id="login-email" placeholder="Email" class="w-full border p-2 rounded" required>
+        <input type="password" id="login-password" placeholder="Password" class="w-full border p-2 rounded" required>
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Login</button>
+      </form>
+      <p class="text-center mt-4">
+        Don't have an account? <button id="show-register" class="text-blue-500">Register</button>
+      </p>
+    </div>
+  </div>
+
+  <!-- Registration Form -->
+  <div id="register-page" class="hidden flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md bg-white p-6 rounded shadow">
+      <h2 class="text-center text-xl font-bold mb-4">Register</h2>
+      <form id="register-form" class="space-y-4">
+        <input type="text" id="register-name" placeholder="Name" class="w-full border p-2 rounded" required>
+        <input type="email" id="register-email" placeholder="Email" class="w-full border p-2 rounded" required>
+        <input type="text" id="Designation" placeholder="Designation" class="w-full border p-2 rounded" required>
+        <input type="password" id="register-password" placeholder="Password" class="w-full border p-2 rounded" required>
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Register</button>
+      </form>
+      <p class="text-center mt-4">
+        Already have an account? <button id="show-login" class="text-blue-500">Login</button>
+      </p>
+    </div>
+  </div>
+
+  <!-- Admin Panel -->
+  <div id="admin-panel" class="hidden p-6">
+    <h2 class="text-xl font-bold mb-4">User DashBoard</h2>
+    <div class="flex justify-between flex-row items-center">
+        <div class="mb-4">
+            <button id="block-users" class="bg-red-500 text-white px-4 py-2 rounded">Block </button>
+            <button id="unblock-users" class="bg-blue-500 text-white px-4 py-2 rounded">Unblock</button>
+            <button id="delete-users" class="bg-gray-500 text-white px-4 py-2 rounded">Delete</button>
+          </div>
+          <div class="flex items-center justify-center pb-2">
+              <input
+              id="search-users"
+              type="text"
+              placeholder="Filter by Name "
+              class="border p-2 rounded w-64"
+            />
+          </div>
+    </div>
+    
+    <table class="w-full border-collapse border border-gray-300">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border p-2">
+            <input type="checkbox" id="select-all">
+          </th>
+          <th class="border p-2">Name</th>
+          <th class="border p-2">Email</th>
+          <th class="border p-2">Last Login</th>
+          <th class="border p-2">Status</th>
+        </tr>
+      </thead>
+      <tbody id="user-table"></tbody>
+    </table>
+  </div>
+
+</body>
+</html>
